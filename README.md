@@ -1,6 +1,3 @@
-# html-cheat-sheet
-HTML &lt;> for easy programming
-
 ## ⚖️ Conditions d’utilisation
 
 - ✅ Vous pouvez **utiliser** et **modifier** ce document pour un usage **personnel ou éducatif**.  
