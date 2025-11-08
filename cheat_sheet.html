@@ -1,0 +1,303 @@
+<!--
+Fichier : cheat_sheet_commente.html
+Version commentée et simplifiée du squelette HTML + Tailwind
+Chaque balise et classe est expliquée en français simple.
+-->
+
+<!DOCTYPE html> <!-- Indique au navigateur qu'on utilise HTML5 -->
+<html lang="fr-CA"> <!-- Balise racine du document ; "lang" précise la langue du contenu -->
+<head> <!-- Contient les infos invisibles (métadonnées, titre, styles, scripts) -->
+
+	<meta charset="utf-8"> <!-- Définit l'encodage des caractères (UTF-8 = accents corrects) -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Règle le zoom pour les mobiles -->
+	
+	<title>Cheat Sheet HTML + Tailwind</title> <!-- Titre affiché dans l'onglet du navigateur -->
+	
+	<!--🧠 Importer un fichier CSS externe dans un document HTML-->
+	
+	<link rel="stylesheet" href="<document>">
+	
+	<!--📌 Remplace <document> par le chemin vers ton fichier CSS.
+	
+	🔹 Si le fichier CSS est dans le même dossier :
+	    href="style.css"
+	
+	🔹 Si le fichier CSS est dans un dossier enfant :
+	    Exemple :
+	    Projet/
+	      ├─ index.html
+	      └─ css/
+	         └─ index.css
+	    👉 href="css/index.css"
+	
+	🔹 Si le fichier HTML est dans un dossier et le CSS dans un dossier voisin :
+	    Exemple :
+	    Projet/
+	      ├─ html/
+	      │   └─ index.html
+	      └─ css/
+	          └─ index.css
+	    👉 href="../css/index.css"
+	
+	🔹 Syntaxe générale :
+	    ../  → remonter d’un dossier
+	    dossier/ → entrer dans un dossier
+	
+	💡 Astuce :
+	    Utiliser un fichier CSS externe permet d’éviter de mettre
+	    toutes les règles CSS directement dans le fichier HTML.
+	-->
+
+	
+	<!--
+	Charge Tailwind CSS depuis un CDN (internet).
+	Ce script rend disponibles toutes les classes Tailwind (p-6, text-slate-700, bg-white...).
+	Ces classes servent à styliser les éléments sans écrire de CSS manuel.
+	-->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<header class="mb-6 border-b pb-3">
+  <h1 class="text-2xl font-bold">Mon Portfolio IA & Cloud</h1>
+  <p class="text-slate-600">Bienvenue sur mon site personnel</p>
+</header>
+<!--
+<header> = en-tête d’une page ou section.
+Contient souvent le logo, le titre ou le menu.
+Améliore la compréhension du contenu pour les moteurs de recherche et les lecteurs d’écran.
+-->
+
+<!-- Le contenu visible de la page commence ici -->
+<body class="p-6 bg-white text-slate-700">
+  <!--
+  p-6 = padding (espace intérieur) de 24px sur tous les côtés
+  bg-white = fond blanc
+  text-slate-700 = couleur du texte gris foncé
+  -->
+
+  <h1 class="text-2xl font-semibold mb-4">
+    <!--
+    text-2xl = texte grand (≈24px)
+    font-semibold = texte un peu gras
+    mb-4 = marge en bas (16px)
+    -->
+    Exemple de page HTML commentée
+  </h1>
+
+  <p>
+    <!-- <p> = paragraphe de texte -->
+    Voici un paragraphe simple. Les espaces et retours à la ligne sont ignorés.
+  </p>
+
+  <br> <!-- <br> = saut de ligne -->
+
+  <p>
+    Un autre paragraphe avec un <span class="font-semibold">mot en gras</span>.
+    <!-- <span> = balise pour modifier une partie du texte sans couper le paragraphe -->
+  </p>
+
+  <a href="#" class="text-blue-600 hover:underline">
+    <!-- <a> = lien cliquable ; href définit la destination -->
+    <!-- text-blue-600 = texte bleu ; hover:underline = souligné quand on passe la souris -->
+    Exemple de lien
+  </a> 
+
+  <div class="mt-6 p-4 bg-slate-100 rounded-lg">
+    <!--
+    <div> = conteneur général pour regrouper des éléments
+    mt-6 = marge haute de 24px
+    p-4 = padding interne de 16px
+    bg-slate-100 = fond gris très clair
+    rounded-lg = coins arrondis
+    -->
+    <p>Contenu d’un bloc visuel.</p>
+  </div>
+
+  <img src="https://via.placeholder.com/150" alt="Exemple d’image" class="mt-6 w-40 h-24 object-cover rounded">
+  <!--
+  <img> = image ; src = lien de l’image ; alt = description (accessibilité)
+  w-40 = largeur fixe (~160px)
+  h-24 = hauteur fixe (~96px)
+  object-cover = recadre l’image pour bien remplir
+  rounded = coins légèrement arrondis
+  -->
+  
+  <!--
+  🔹 RESPONSIVE DESIGN AVEC TAILWIND 🔹
+
+  Tailwind permet d’adapter le style selon la largeur de l’écran
+  grâce aux "breakpoints" (préfixes comme sm:, md:, lg:, etc.).
+  
+  👉 Par défaut, les classes sans préfixe s’appliquent à TOUS les écrans.
+  👉 Les classes avec préfixe s’activent SEULEMENT à partir
+     d’une certaine largeur minimale (min-width).
+  
+  Breakpoints par défaut :
+    sm:  ≥ 640px  (petits écrans, tablettes)
+    md:  ≥ 768px  (tablettes horizontales, débuts desktop)
+    lg:  ≥ 1024px (ordinateurs portables)
+    xl:  ≥ 1280px (grands écrans)
+    2xl: ≥ 1536px (écrans très larges)
+  -->
+
+  <div class="mt-10 p-6 bg-slate-100 rounded-lg">
+    <!--
+    Ce bloc change de couleur et de taille de texte selon la largeur de l’écran.
+    -->
+    <p class="text-red-600 md:text-blue-600 lg:text-green-600 text-lg md:text-2xl lg:text-4xl font-semibold">
+      Ce texte est :
+      - Rouge sur mobile (0-768px)
+      - Bleu sur tablette / petit écran (≥768px)
+      - Vert sur grand écran (≥1024px)
+	  - C'est toujours semi-gras.
+    </p>
+
+    <!--
+    Explication :
+      text-red-600   → appliqué par défaut (mobile)
+      md:text-blue-600 → à partir de 768px de large
+      lg:text-green-600 → à partir de 1024px de large
+
+      text-lg (mobile), md:text-2xl, lg:text-4xl → la taille augmente aussi
+    -->
+  </div>
+
+  <div class="mt-6 p-4 bg-gray-100 rounded-md text-center">
+    <!-- Autre exemple : visibilité responsive -->
+    <p class="block md:hidden text-red-600 font-medium">
+      Visible uniquement sur mobile 👀
+    </p>
+    <p class="hidden md:block text-blue-600 font-medium">
+      Visible uniquement sur desktop 💻
+    </p>
+
+    <!--
+    Explication :
+      block md:hidden → visible sur mobile, caché à partir de 768px
+      hidden md:block → caché sur mobile, visible à partir de 768px
+    -->
+  <!--Exemple (liste à puces)-->
+  </div>
+  <ul class="list-disc ml-6 text-slate-700">
+  <li class="font-semibold">Python</li>
+  <li>Scikit-learn</li>
+  <li>RAG / LLM</li>
+</ul>
+  <!--Exemple (liste numérotée)-->
+  <ol class="list-decimal ml-6 text-slate-700">
+  <li>Cloner le dépôt</li>
+  <li>Installer les dépendances</li>
+  <li>Lancer l’application</li>
+  </ol>
+<!--
+<ul> → quand l’ordre n’a pas d’importance (compétences, techno, ressources).
+<ol> → quand l’ordre compte (tutoriel, étapes d’un TP).
+1 élément = 1 <li> → pas de texte en vrac dans le <ul>.-->
+
+<nav class="mx-auto max-w-6xl px-4 py-3">
+  <ul class="flex gap-6 text-sm">
+    <li><a class="hover:text-blue-600 font-semibold" href="#projects">Projets</a></li>
+    <li><a class="hover:text-blue-600 font-semibold" href="#about">À propos</a></li>
+    <li><a class="hover:text-blue-600 font-semibold" href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<!--<nav> → bloc principal du menu.-->
+<section id="contact" class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+  <h2 class="text-2xl md:text-3xl font-semibold">Contact</h2>
+  <p class="mt-3 text-slate-700">Écrivez-moi pour vos projets IA & Cloud.</p>
+</section>
+<!--La balise <section> sert à regrouper un bloc de contenu thématique dans une page — ici, la section “Contact”.
+Elle rend le HTML plus sémantique, c’est-à-dire plus clair pour les moteurs de recherche et les lecteurs d’écran. Peux etre utlizer pour css.-->
+<form>
+  <input type="text" placeholder="Nom">
+  <input type="email" placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+  <label for="pays">Pays :</label>
+  <select id="pays">
+  <option>Canada</option>
+  <option>France</option>
+  <option>Belgique</option>
+</select>
+
+  <button>Envoyer</button>
+</form>
+<!--
+<form> = bloc de saisie
+<input> = champ texte
+<textarea> = grand champ
+<button> = bouton d’envoi
+<select> = menu déroulant.
+<option> = choix dans la liste.
+L’attribut id du <select> permet de le lier à un <label> avec for.
+On peut ajouter selected sur une option par défaut :
+-->
+<video controls width="300">
+  <source src="demo.mp4" type="video/mp4">
+</video>
+<!--
+controls = ajoute lecture/pause
+source = lien vers le fichier vidéo
+
+.mp4	video/mp4	Format le plus universel
+.webm	video/webm	Format libre et léger
+.ogg	video/ogg	Ancien format libre
+.mov	video/quicktime	Format Apple
+-->
+<audio controls>
+  <source src="musique.mp3" type="audio/mpeg">
+</audio>
+<!--
+.mp3	audio/mpeg	Format MP3 (très compatible)
+.ogg	audio/ogg	Format libre, bonne qualité
+.wav	audio/wav	Fichier non compressé (gros)
+.aac	audio/aac	Format Apple/YouTube
+-->
+
+<figure class="mt-6">
+  <img src="https://via.placeholder.com/300" alt="Exemple d’image">
+  <figcaption class="text-sm text-slate-500">Légende de l’image</figcaption>
+</figure>
+<!--
+<figure> = groupe visuel (image, graphique, code, etc.).
+<figcaption> = légende associée.
+Ensemble utile pour l’accessibilité et la présentation.
+-->
+
+<main class="mt-6">
+  <p>Voici le contenu principal de la page.</p>
+</main>
+<!--<main> = partie centrale du document.
+Ne doit apparaître qu’une seule fois par page.
+Exclut les éléments répétés (comme menu, footer, etc.).-->
+
+<article class="p-4 bg-slate-50 rounded-lg shadow">
+  <h2 class="text-xl font-semibold">Projet IA : Chatbot intelligent</h2>
+  <p>Ce projet explore l’intégration d’un modèle de langage dans une interface web.</p>
+</article>
+<!--
+<article> = contenu autonome (article, projet, post, fiche).
+Peut être lu indépendamment du reste de la page.
+-->
+<aside class="mt-4 p-3 bg-slate-100 text-sm rounded">
+  💡 Astuce : un <strong>aside</strong> contient des infos secondaires (ex. note, lien externe).
+</aside>
+<!--
+<aside> = contenu complémentaire, lié mais non essentiel.
+Parfait pour des encadrés, citations ou liens utiles.
+-->
+
+  <footer class="mt-8 border-t pt-4 text-sm text-slate-500">
+    <!--
+    <footer> = bas de page
+    mt-8 = marge haute (32px)
+    border-t = ligne en haut
+    pt-4 = padding haut (16px)
+    text-sm = petite taille de texte (14px)
+    text-slate-500 = gris moyen
+    -->
+    © 2025 Exemple. Tous droits réservés.
+  </footer>
+
+</body>
+</html> <!-- Fin du document HTML -->
