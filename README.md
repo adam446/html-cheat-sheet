@@ -1,3 +1,7 @@
+## Recommnendation D'ulisation:
+
+Utilizer pendant que tu programe pour facilement trouver la structure de la partie du code en question. 
+
 ## ⚖️ Conditions d’utilisation
 
 - ✅ Vous pouvez **utiliser** et **modifier** ce document pour un usage **personnel ou éducatif**.  
