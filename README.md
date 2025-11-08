@@ -1,11 +1,5 @@
 # html-cheat-sheet
 HTML &lt;> for easy programming
-# 🧠 HTML Cheat Sheet
-
-Ce dépôt contient une fiche de référence (*cheat sheet*) pour apprendre et réviser les bases du **HTML** et de **Tailwind CSS**.  
-Le document a été créé à des fins **éducatives et personnelles**, pour aider les débutants à comprendre la structure d’une page HTML commentée.
-
----
 
 ## ⚖️ Conditions d’utilisation
 
