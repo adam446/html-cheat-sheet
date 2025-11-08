@@ -1,0 +1,156 @@
+/*
+====================================================
+🎨 CHEAT SHEET CSS — Version simplifiée et commentée
+Regroupe les propriétés les plus utiles par thème :
+Texte, Couleurs, Fond, Bordures, Dimensions, etc.
+====================================================
+*/
+
+/* 🖋️ TEXTE */
+/* ----------------------------------------------- */
+.text-demo {
+  color: #222;                 /* couleur du texte */
+  font-size: 18px;             /* taille de texte */
+  font-weight: bold;           /* gras (normal, bold, 100–900) */
+  font-style: italic;          /* italique */
+  font-family: Arial, sans-serif; /* police */
+  text-align: center;          /* alignement (left, right, center, justify) */
+  text-transform: uppercase;   /* majuscules (uppercase, lowercase, capitalize) */
+  letter-spacing: 2px;         /* espacement entre lettres */
+  word-spacing: 5px;           /* espacement entre mots */
+  text-decoration: underline;  /* souligné (underline, overline, line-through) */
+}
+
+/* 🎨 COULEURS & FONDS */
+/* ----------------------------------------------- */
+.bg-demo {
+  background-color: lightblue; /* couleur de fond */
+  color: navy;                 /* couleur du texte */
+}
+
+.gradient {
+  background: linear-gradient(to right, #06b6d4, #3b82f6); /* dégradé horizontal */
+}
+
+.image-bg {
+  background-image: url("https://via.placeholder.com/200");
+  background-size: cover;      /* remplit tout le bloc */
+  background-position: center; /* centre l’image */
+  background-repeat: no-repeat;
+  color: white;
+}
+
+/* 📦 DIMENSIONS & BOX MODEL */
+/* ----------------------------------------------- */
+.box-demo {
+  width: 200px;                /* largeur */
+  height: 100px;               /* hauteur */
+  margin: 20px;                /* marge extérieure */
+  padding: 15px;               /* marge intérieure */
+  border: 2px solid #333;      /* bordure */
+  border-radius: 10px;         /* coins arrondis */
+  box-sizing: border-box;      /* inclut padding + border dans la taille */
+}
+
+/* 🧭 POSITIONNEMENT */
+/* ----------------------------------------------- */
+.relative { position: relative; top: 10px; left: 10px; }
+.absolute { position: absolute; top: 0; right: 0; }
+.fixed    { position: fixed; bottom: 10px; right: 10px; }
+.sticky   { position: sticky; top: 0; background: yellow; }
+
+/* 🧱 LAYOUT — FLEXBOX */
+/* ----------------------------------------------- */
+.flex {
+  display: flex;
+  justify-content: center;     /* horizontal : flex-start, center, flex-end, space-between */
+  align-items: center;         /* vertical : flex-start, center, stretch */
+  gap: 10px;                   /* espace entre les éléments */
+}
+
+/* 🧩 LAYOUT — GRID */
+/* ----------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  gap: 10px;
+}
+
+/* 🌊 BORDURES, OMBRES & EFFETS */
+/* ----------------------------------------------- */
+.border-demo {
+  border: 3px dashed #888;     /* style (solid, dashed, dotted, double) */
+}
+
+.shadow-demo {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* ombre douce */
+}
+
+.rounded-demo {
+  border-radius: 50%;          /* cercle parfait (si carré) */
+}
+
+/* 🔄 TRANSITIONS & ANIMATIONS */
+/* ----------------------------------------------- */
+.transition {
+  transition: all 0.3s ease;   /* animation fluide sur 0.3s */
+}
+
+.transition:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Animation simple */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 2s infinite; /* joue en boucle */
+}
+
+/* 🖱️ CURSEURS & INTERACTION */
+/* ----------------------------------------------- */
+.pointer { cursor: pointer; }
+.not-allowed { cursor: not-allowed; }
+
+/* 📱 RESPONSIVE DESIGN */
+/* ----------------------------------------------- */
+.responsive {
+  width: 100%;
+  height: 100px;
+  background: pink;
+}
+
+/* Tablette */
+@media (min-width: 768px) {
+  .responsive {
+    background: lightblue;
+  }
+}
+
+/* Ordinateur */
+@media (min-width: 1024px) {
+  .responsive {
+    background: lightgreen;
+  }
+}
+
+/*
+====================================================
+💡 RÉSUMÉ RAPIDE
+====================================================
+🔹 Couleur → color, background-color
+🔹 Police → font-family, font-size, font-weight
+🔹 Alignement → text-align, justify-content, align-items
+🔹 Espaces → margin, padding, gap
+🔹 Taille → width, height
+🔹 Bordure → border, border-radius
+🔹 Effets → box-shadow, transition, animation
+🔹 Position → relative, absolute, fixed, sticky
+🔹 Responsive → @media (min-width: …)
+====================================================
+*/
